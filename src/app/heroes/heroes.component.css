@@ -17,6 +17,7 @@ input {
 .heroes li {
   position: relative;
   cursor: pointer;
+  width: 340px;
 }
 
 .heroes li:hover {
@@ -62,6 +63,23 @@ input {
   border-radius: 4px 0 0 4px;
 }
 
+.heroes .badge-points {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #eb4034;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
 .add-button {
  padding: .5rem 1.5rem;
  font-size: 1rem;
@@ -75,7 +93,7 @@ input {
 
 button.delete {
   position: absolute;
-  left: 210px;
+  left: 310px;
   top: 5px;
   background-color: white;
   color:  #525252;
