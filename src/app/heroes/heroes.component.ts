@@ -10,6 +10,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
+  id: number = 21;
 
   constructor(private heroService: HeroService) { }
 
@@ -27,10 +28,13 @@ export class HeroesComponent implements OnInit {
     var points = Number(pointsString)
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name, points } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
-      });
+    // this.heroService.addHero({ name, points } as Hero)
+    //   .subscribe(hero => {
+    //     this.heroes.push(hero);
+    //   });
+    var id = Number(this.id)
+    this.heroes.push({ id, name, points } as Hero)
+    this.id++;
     this.heroes = this.heroes.sort((h1, h2) => h2.points - h1.points)
   }
 
