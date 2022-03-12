@@ -3,9 +3,11 @@
 <div>
   <label for="new-hero">Hero name: </label>
   <input id="new-hero" #heroName />
+  <label for="new-hero">Hero points: </label>
+  <input id="new-hero" #heroPoints />
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+  <button type="button" class="add-button" (click)="add(heroName.value, heroPoints.value); heroName.value=''">
     Add hero
   </button>
 </div>

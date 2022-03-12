@@ -23,9 +23,9 @@ export class HeroesComponent implements OnInit {
       this.heroes = this.heroes.sort((h1, h2) => h2.points - h1.points)
   }
 
-  add(name: string): void {
+  add(name: string, pointsString: string): void {
+    var points = Number(pointsString)
     name = name.trim();
-    var points = 1
     if (!name) { return; }
     this.heroService.addHero({ name, points } as Hero)
       .subscribe(hero => {
