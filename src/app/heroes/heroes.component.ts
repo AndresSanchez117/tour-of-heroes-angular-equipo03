@@ -19,16 +19,19 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
+      this.heroes = this.heroes.sort((h1, h2) => h2.points - h1.points)
   }
 
   add(name: string): void {
     name = name.trim();
+    var points = 1
     if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
+    this.heroService.addHero({ name, points } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
       });
+    this.heroes = this.heroes.sort((h1, h2) => h2.points - h1.points)
   }
 
   delete(hero: Hero): void {
